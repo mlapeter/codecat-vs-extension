@@ -15,8 +15,8 @@ class MyCodeLensProvider implements CodeLensProvider {
 
     // Define what command we want to trigger when activating the CodeLens
     let c: Command = {
-      command: "extension.addConsoleLog",
-      title: "Insert console.log"
+      command: "codecat.addDocString",
+      title: "Document This"
     };
 
     let codeLens = new CodeLens(topOfDocument, c);

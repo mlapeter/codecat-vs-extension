@@ -6,28 +6,33 @@ const editor = vscode.window.activeTextEditor;
 
 
 
-async function addConsoleLog() {
-    if (!editor) {
-        return; // No open text editor
-    }
-    let selection = editor.selection;
-    let start = selection.start;
-    let end = selection.end;
-    let insertionLocation = new Range(start.line, start.character, end.line, end.character);
-
-    let snippet = new SnippetString("console.log($1);\n");
-
-    editor.insertSnippet(snippet, insertionLocation);
-}
 
 async function addDocString(context: vscode.ExtensionContext) {
   if (!editor) {
     return; // No open text editor
 }
 
+  // const loadingMessage = vscode.window.showInformationMessage('Generating...');
+
+  // hide the loading message
+
+
   const text = editor.document.getText(editor.selection);
 
-  // vscode.window.showInformationMessage("TESTING: " + text);
+  vscode.window.withProgress(
+    {
+      location: vscode.ProgressLocation.Notification,
+      title: 'Generating ...',
+      cancellable: false,
+    },
+    async (progress) => {
+     for (let i = 0; i < 10; i++) {
+      setTimeout(() => {
+        progress.report({ increment: i*10, message: "Generating" });
+      }, 5000);
+    }
+   }
+  )
 
 
   let url = "http://localhost:5000/api/v1/completions";
@@ -67,7 +72,6 @@ async function addDocString(context: vscode.ExtensionContext) {
 }
 
 
-export { addConsoleLog };
 export { addDocString };
 
 

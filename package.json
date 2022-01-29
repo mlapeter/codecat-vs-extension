@@ -21,14 +21,50 @@
 				"title": "Hello World"
 			},
 			{
-				"command": "codecat.addConsoleLog",
-				"title": "Add Console Log"
-			},
-			{
 				"command": "codecat.addDocString",
 				"title": "Add DocString"
 			}
-		]
+		],
+    "keybindings": [
+      {
+        "command": "codecat.addDocString",
+        "key": "cmd+.",
+        "mac": "cmd+.",
+        "win": "ctrl+.",
+        "when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|php/"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|php/",
+          "command": "codecat.addDocString"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "codecat",
+          "title": "CodeCat Doc Writer (⌘.)",
+          "icon": "assets/codecat.png"
+        }
+      ]
+    },
+    "views": {
+      "codecat": [
+        {
+          "id": "codecat",
+          "name": "AI Generate Docs"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "codecat",
+        "contents": "CodeCat.AI\n[🐱 Generate Docs (⌘.)](command:codecat.addDocString)"
+      }
+    ]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
