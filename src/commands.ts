@@ -12,12 +12,10 @@ async function addDocString(context: vscode.ExtensionContext) {
     return; // No open text editor
 }
 
-  // const loadingMessage = vscode.window.showInformationMessage('Generating...');
-
-  // hide the loading message
-
-
   const text = editor.document.getText(editor.selection);
+
+  const fileName = editor.document.fileName;
+  
 
   vscode.window.withProgress(
     {
@@ -29,38 +27,24 @@ async function addDocString(context: vscode.ExtensionContext) {
      for (let i = 0; i < 10; i++) {
       setTimeout(() => {
         progress.report({ increment: i*10, message: "Generating" });
-      }, 5000);
+      }, 100000);
     }
    }
-  )
+  );
 
 
-  let url = "http://localhost:5000/api/v1/completions";
+  let url = "/api/v1/completions";
   let fastapiEndpoint = "docstring-generator";
 
- 
   console.log("STARTING POST");
-  console.log(vscode.env.machineId);
 
-  const res = await api.postCompletion({url: url, textInput: "", codeInput: text, fastapiEndpoint: fastapiEndpoint, user: "Tfptsoj5ftjDh7W4UCSH5npH", machineId: vscode.env.machineId});
+  const res = await api.postCompletion({url: url, textInput: "", codeInput: text, fastapiEndpoint: fastapiEndpoint, user: "",  machineId: vscode.env.machineId, fileName: fileName});
 
   console.log("RESPONSE:");
   console.log(res);
   const json = await res.json();
-  console.log("AI Output:");
-  console.log(json);
-
-  // // display an input box
-  // let inputBox = await window.showInputBox({
-  //   prompt: "Free limit reached, please enter your API Key:",
-  //   value: "visit https://www.codecat.ai/",
-  //   });
-
-  //   console.log("RESULT:");
-  //   console.log(inputBox);
 
 
-  
   
   let selection = editor.selection;
   let start = selection.start;
@@ -71,11 +55,4 @@ async function addDocString(context: vscode.ExtensionContext) {
 
 }
 
-
 export { addDocString };
-
-
-
-// export const removeSpace = (content: string): string => {
-//   return content.replace(/\n\s*/gm, ' ');
-// };
