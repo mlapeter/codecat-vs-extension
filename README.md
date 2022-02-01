@@ -4,7 +4,6 @@ Document your code with a single click! Just select the code and click "Generate
 
 CodeCat.AI is your AI companion to help you write better code, faster.
 
-https://cln.sh/5285en
 
 
 [![Demo](/assets/demo1.gif)](https://cln.sh/5285en)
