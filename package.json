@@ -2,29 +2,35 @@
 		"name": "codecat-ai",
 		"displayName": "CodeCat.AI",
 		"description": "AI Docstring Generator",
-		"version": "0.0.1",
-    "icon": "assets/codecat-ai-logo.png",
+		"version": "0.0.7",
+		"icon": "assets/icon.png",
 		"engines": {
 				"vscode": "^1.63.0"
 		},
-    "publisher": "code-cat",
-    "keywords": [
-      "autodocstring",
-      "documentation",
-      "docstring",
-      "generator",
-      "writer",
-      "typescript",
-      "javascript",
-      "nodejs",
-      "jsdoc",
-      "ai"
-    ],
+		"publisher": "code-cat",
+    "repository": {
+      "url": "https://github.com/mlapeter/codecat-vs-extension"
+    },
+		"keywords": [
+				"autodocstring",
+				"documentation",
+				"docstring",
+				"generator",
+				"writer",
+				"typescript",
+				"javascript",
+				"nodejs",
+				"jsdoc",
+				"ai"
+		],
 		"categories": [
-				"Programming Languages", "Snippets", "Formatters"
+				"Programming Languages",
+				"Snippets",
+				"Formatters"
 		],
 		"activationEvents": [
-				"onLanguage:javascript"
+				"onCommand:codecat.addDocString",
+				"onStartupFinished"
 		],
 		"main": "./out/extension.js",
 		"contributes": {
@@ -37,16 +43,16 @@
 				"keybindings": [
 						{
 								"command": "codecat.addDocString",
-								"key": "cmd+.",
-								"mac": "cmd+.",
-								"win": "ctrl+.",
-								"when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|php/"
+								"key": "cmd+'",
+								"mac": "cmd+'",
+								"win": "ctrl+'",
+								"when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|ruby/"
 						}
 				],
 				"menus": {
 						"editor/context": [
 								{
-										"when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|php/",
+										"when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|ruby/",
 										"command": "codecat.addDocString"
 								}
 						]
@@ -55,8 +61,8 @@
 						"activitybar": [
 								{
 										"id": "codecat",
-										"title": "CodeCat Doc Writer (⌘.)",
-										"icon": "assets/cat-face2.png"
+										"title": "CodeCat Doc Writer (⌘+')",
+										"icon": "assets/codecat.png"
 								}
 						]
 				},
@@ -71,7 +77,7 @@
 				"viewsWelcome": [
 						{
 								"view": "codecat",
-								"contents": "CodeCat.AI\n[🐱 Generate Docs (⌘.)](command:codecat.addDocString)"
+								"contents": "CodeCat.AI\n[🐱 Generate Docs (⌘+')](command:codecat.addDocString)"
 						}
 				]
 		},
@@ -97,7 +103,6 @@
 				"typescript": "^4.5.4"
 		},
 		"dependencies": {
-				"isomorphic-fetch": "3.0.0",
-				"node-fetch": "3.2.0"
+				"isomorphic-fetch": "3.0.0"
 		}
 }

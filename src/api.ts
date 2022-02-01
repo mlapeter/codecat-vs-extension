@@ -7,12 +7,7 @@ const environment = process.env.CODECAT_VSCODE_ENV || 'production';
 const baseUrl = environment === 'development' ? 'http://localhost:5000' : 'https://codecat.ai';
 
 export async function postCompletion(args) {
-  const {url, textInput, codeInput, fastapiEndpoint, user, machineId, fileName} = args;
-
-  console.log("postToCompletions", args);
-
-  const extension = fileName.split('.').pop();
-  console.log("extension", extension);
+  const {url, textInput, codeInput, fastapiEndpoint, user, machineId, extension} = args;
 
   const res = await fetch(baseUrl + url, {
     method: 'POST',
@@ -30,5 +25,4 @@ export async function postCompletion(args) {
   });
 
   return res;
-
 }

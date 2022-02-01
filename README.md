@@ -8,6 +8,8 @@ CodeCat.AI is your AI companion to help you write better code, faster.
 
 - JavaScript
 - TypeScript
+- Python
+- Ruby
 - More coming soon!
 
 
