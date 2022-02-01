@@ -1,8 +1,8 @@
 {
 		"name": "codecat-ai",
-		"displayName": "CodeCat.AI",
-		"description": "AI Docstring Generator",
-		"version": "0.0.8",
+		"displayName": "CodeCat.AI Docstring AI Generator",
+		"description": "Docstring Generator",
+		"version": "0.0.9",
 		"icon": "assets/icon.png",
 		"engines": {
 				"vscode": "^1.63.0"
@@ -12,6 +12,8 @@
       "url": "https://github.com/mlapeter/codecat-vs-extension"
     },
 		"keywords": [
+        "AI + Machine Learning",
+        "docstring",
 				"autodocstring",
 				"documentation",
 				"docstring",
@@ -21,12 +23,14 @@
 				"javascript",
 				"nodejs",
 				"jsdoc",
+        "ruby",
 				"ai"
 		],
 		"categories": [
 				"Programming Languages",
 				"Snippets",
-				"Formatters"
+				"Formatters",
+        "Other"
 		],
 		"activationEvents": [
 				"onCommand:codecat.addDocString",
