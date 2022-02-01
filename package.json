@@ -2,7 +2,7 @@
 		"name": "codecat-ai",
 		"displayName": "CodeCat.AI",
 		"description": "AI Docstring Generator",
-		"version": "0.0.7",
+		"version": "0.0.8",
 		"icon": "assets/icon.png",
 		"engines": {
 				"vscode": "^1.63.0"
