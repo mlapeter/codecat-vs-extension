@@ -2,7 +2,7 @@
 		"name": "codecat-ai",
 		"displayName": "CodeCat.AI Docstring AI Generator",
 		"description": "Docstring Generator",
-		"version": "0.0.9",
+		"version": "0.0.10",
 		"icon": "assets/icon.png",
 		"engines": {
 				"vscode": "^1.63.0"
@@ -42,7 +42,15 @@
 						{
 								"command": "codecat.addDocString",
 								"title": "Add DocString"
-						}
+						},
+            {
+              "command": "codecat.generateSql",
+              "title": "Generate SQL Query"
+            },
+            {
+              "command": "codecat.generateActiveRecordQuery",
+              "title": "Generate Active Record Query"
+            }
 				],
 				"keybindings": [
 						{
@@ -81,7 +89,7 @@
 				"viewsWelcome": [
 						{
 								"view": "codecat",
-								"contents": "CodeCat.AI\n[🐱 Generate Docs (⌘+')](command:codecat.addDocString)"
+								"contents": "CodeCat.AI\n[🐱 Generate Docs (⌘+')](command:codecat.addDocString)\n[💻 Generate SQL Query](command:codecat.generateSql)\n[🩸 Generate Active Record Query](command:codecat.generateActiveRecordQuery)"
 						}
 				]
 		},
