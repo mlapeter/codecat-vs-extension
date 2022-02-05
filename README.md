@@ -1,53 +1,31 @@
-# CodeCat AI DocString Generator
+# CodeCat AI DocString Rails Active Record Query Generator
 
 
-### Docstring Generator powered by AI
+### Rails Active Record Query Generator powered by AI
 
-Docstring your code with a single click! Just select the code and click "Generate DocsString".
+Generate Rails Active Record Queries using natural language! Describe your query in words, select them, and click "Generate Active Record Query". You can optionally allow the extension to scan your schema.rb file for table names and column names to generate much more accurate results.
 
 
-CodeCat.AI is your AI companion to help you write better code, faster. Document your own code with docstrings, or use it to understand other's code.
+CodeCat.AI is your AI companion to help you write better code, faster.
 
-### New SQL Query Generator Features:
+### New Query Generator Features:
 
 - Postgres SQL Query Generator: Generate SQL queries from natural language: write a query like "find all the employees who have yet to take any vacation time" and we'll generate the SQL query for you.
 
 - Rails Active Record Query Generator: Generate Rails Active Record queries from natural language: write a query in words and we'll generate the Rails Active Record Query for you. 
 
 
-
-[![Docstring 1](/assets/demo1.gif)](https://cln.sh/5285en)
-
-[![Docstring 2](/assets/demo2.gif)](https://cln.sh/5285en)
-
-[![Docstring 3](/assets/demo3.gif)](https://cln.sh/5285en)
+[![Rails Active Record Generator](/assets/rails-active-record-generator-demo.gif)](https://codecat.ai/)
 
 
 
-### Generate a Docstring In These Lanugages:
+### Active Record Query Generator Features
 
-- JavaScript Docstring Generator
-- TypeScript Docstring Generator
-- Python Docstring Generator
-- Ruby Yardoc Generator
-- More coming soon!
+1. Describe query using words
+2. Select your description
+3. Click Generate Active Record Query
+4. Or Click Generate SQL Query
 
-### Docstring Generator Features
-
-- Generate Docstring in a single click
-- Use the docstring to improve your own code
-- Use the docstring to understand other's code
-
-### Never Used A Docstring Before?
-
-- Learn more about Python Docstring: https://www.python.org/dev/peps/pep-0257/
-- Learn more about Ruby Yardoc/ Docstring: https://yardoc.org/
-- Learn more about JavaScript Docstring: https://jsdoc.app/
-
-
-### More Docstring information
-
-[CodeCat.AI Docstring Generator](https://codecat.ai/?docstring)
 
 ### More SQL Query Generator information
 [CodeCat.AI  SQL Query Generator](https://codecat.ai/?sql-query-generator)
